@@ -1,23 +1,24 @@
-#include <iostream>
-#include <math.h>
-#include <sstream>
-#include <stdlib.h>
-#include <bits/stdc++.h>
-#include <fstream>
+#include <iostream>// Flux d entre sortie
+#include <math.h>// Pour les fonctions maths
+#include <sstream>//stringstream is used for insertion and extraction of data to/from the string objects.
+#include <stdlib.h> // bib standard
+#include <bits/stdc++.h>//is an implementation file for a precompiled header. But in contests, using this file is a good idea,
+//when you want to reduce the time wasted in doing chores; especially when your rank is time-sensitive
+#include <fstream>// means it can create files, write information to files, and read information from files.
 
 using namespace std;
 int choix1;
- void menuCentrale()
+ void menuCentrale()//The void menuCentral() indicates that the menuCentral() function will not return any value
 
 {
     cout<<"Programme c++"<<endl;
     cout<<"Faites un choix parmi la liste ci-dessoous: "<<endl;
     cout<<"1-Op"<<char(130)<<"ration de codage/D"<<char(130)<<"codage/Transcodage"<<endl;
     cout<<"2-Operations math"<<char(130)<<"matiques"<<endl;
-    cout<<"3-Gestion d’information sur un "<<char(130)<<"tudiant"<<endl;
+    cout<<"3-Gestion dâ€™information sur un "<<char(130)<<"tudiant"<<endl;
     cout<<"4-Ma r"<<char(130)<<"alisation"<<endl;
 }
-void choice()
+void choice() //The void choice() indicates that the main() function will not return any value
 {
     cout<<"1 Binaire"<<endl;
 	cout<<"2 Octal"<<endl;
@@ -26,11 +27,12 @@ void choice()
 }
 void vider_buffer()
 {
-    cin.clear();
-    cin.seekg(0,ios::end);
+    cin.clear();//The cin. clear() clears the error flag on cin (so that future I/O operations will work correctly).
+    cin.seekg(0,ios::end);//used to set/get the position of get and put pointers in a file while reading and writing
 
-    if(!cin.fail())
-        cin.ignore(numeric_limits<streamsize>::max());
+    if(!cin.fail())//This function returns true when an input failure occurs.
+        cin.ignore(numeric_limits<streamsize>::max());//cin. ignore(10000, '\n') skips to the next newline
+
     else
         cin.clear();
 }
@@ -43,10 +45,11 @@ int saisie_securise()
         getline(cin,temp);
 
 
-        if (cin.eof() || cin.bad())
+        if (cin.eof() || cin.bad())// tests the stream format. And while giving input, end of character is not reached when there is wrong in the input
+                                   //is used when there is an unrecoverable error with the stream
         {
             cerr<<"Erreur"<<endl;
-
+          // it is used when we need to display the error message immediately and does not store the error message to display later
         if (cin.eof())
         {
             break;
@@ -963,7 +966,7 @@ void display_data()
     if( int (print)==49)
     {
         string s =("notepad.exe /p info.txt");
-        system(s.c_str());//commande system utilisé pour imprimer un fichier
+        system(s.c_str());//commande system utilisÃ© pour imprimer un fichier
     }
 }
 void AZ_data()
@@ -1412,7 +1415,7 @@ int main()
                             cin>>tab[i][j];
                         }
                     }
-                    cout<<"La transposée de votre matrice est: "<<endl;
+                    cout<<"La transposÃ©e de votre matrice est: "<<endl;
                     for(j=0;j<m_colonnes;j++)
                     {
                         for(i=0;i<m_lignes;i++)
@@ -1558,4 +1561,3 @@ cout<<"Si vous voulez continuer pressez 1"<<endl;
 
     return 0;
 }
-
